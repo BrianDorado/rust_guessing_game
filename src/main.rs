@@ -5,6 +5,9 @@ use std::cmp::Ordering;
 fn main() {
 
     let secret_number:u32 = rand::thread_rng().gen_range(1..=100);
+    loop {
+
+
     println!("Guess the number!");
 
     println!("Please input your guess.");
@@ -23,9 +26,11 @@ fn main() {
     match guess.cmp(&secret_number){
         Ordering::Less => println!("Too small!"),
         Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => {println!("You win!");
+        Ordering::Equal => {
+            println!("You win!");
+            break;
+            }
         }
     }
-
 
 }
